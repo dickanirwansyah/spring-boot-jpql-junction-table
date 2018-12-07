@@ -12,4 +12,7 @@ public interface ProdukRepo extends JpaRepository<Produk, Integer> {
     /** with join produk kategories **/
     @Query("SELECT p, pk FROM Produk p JOIN p.produkKategoris pk")
     List<Produk> findAllProduk();
+
+    @Query("SELECT p FROM Produk p JOIN p.produkKategoris pk")
+    List<Produk> findAllProduks();
 }

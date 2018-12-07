@@ -25,9 +25,14 @@ public class ProdukController {
     @Autowired
     private ProdukKategoriRepo produkKategoriRepo;
 
-    @GetMapping
+    @GetMapping(value = "/produk")
     public List<Produk> listProduk(){
         return produkRepo.findAllProduk();
+    }
+
+    @GetMapping(value = "/produks")
+    public List<Produk> listProduks(){
+        return produkRepo.findAllProduks();
     }
 
     @GetMapping(value = "/pk")
